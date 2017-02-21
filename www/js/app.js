@@ -35,16 +35,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     .state('tab', {
     url: '/tab',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
-  })
+        templateUrl: 'templates/tabs/tabs.html'
+      })
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
+    .state('tab.dash', {
+      url: '/dash',
+      views: {
+        'tab-dash': {
+        templateUrl: 'templates/tabs/tab-dash.html',
         controller: 'DashCtrl'
       }
     }
@@ -54,7 +54,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       url: '/chats',
       views: {
         'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
+          templateUrl: 'templates/tabs/tab-chats.html',
           controller: 'ChatsCtrl'
         }
       }
@@ -63,8 +63,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       url: '/chats/:chatId',
       views: {
         'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
+          templateUrl: 'templates/tabs/chat-detail.html',
           controller: 'ChatDetailCtrl'
+        }
+      }
+    })
+
+    .state('tab.follows', {
+      url: '/follows',
+      views: {
+        'tab-follows': {
+          templateUrl: 'templates/tabs/tab-follows.html',
+          controller: 'FollowsCtrl'
         }
       }
     })
@@ -73,7 +83,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/account',
     views: {
       'tab-account': {
-        templateUrl: 'templates/tab-account.html',
+        templateUrl: 'templates/tabs/tab-account.html',
         controller: 'AccountCtrl'
       }
     }
