@@ -1,1 +1,9 @@
 /* Empty. Add your own CSS if you like */
+*{
+  margin: 0 auto;;
+  padding:0;
+  font-family: 'SimHei' !important;
+}
+.pane, .view{
+  background-color: #EBEBEB;
+}

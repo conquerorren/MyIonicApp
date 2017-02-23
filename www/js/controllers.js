@@ -1,9 +1,11 @@
 angular.module('starter.controllers', [
-  'MyIonicApp.DashCtrl',
-  'MyIonicApp.ChatsCtrl',
-  'MyIonicApp.ChatDetailCtrl',
-  'MyIonicApp.FollowsCtrl',
-  'MyIonicApp.AccountCtrl'
+  'MyIonicApp.tabs-controller',
+  'MyIonicApp.homepage-controller',
+  'MyIonicApp.category-controller',
+  'MyIonicApp.chat-detail-controller',
+  'MyIonicApp.follows-controller',
+  'MyIonicApp.account-controller',
+  'MyIonicApp.news-detail-controller'
 ])
 
 // .controller('DashCtrl', function($scope) {})

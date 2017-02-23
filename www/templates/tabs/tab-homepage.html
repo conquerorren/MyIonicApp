@@ -1,0 +1,28 @@
+<ion-view view-title="HomePage">
+  <link href="css/homepage.css" rel="stylesheet" />
+  <ion-content>
+    <!--活动轮播图-->
+    <ion-slide-box show-pager="true" does-continue="true" auto-play="true" slide-interval="3000">
+      <ion-slide ng-repeat="coursel in coursels" class="homepage-ion-slide">
+        <img ng-src="{{coursel.imageurl}}" ng-if="coursel.linkurl != null" ui-sref="{{coursel.linkurl}}">
+      </ion-slide>
+    </ion-slide-box>
+
+    <!--新闻列表-->
+    <div class="news-list">
+      <ion-list>
+        <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="newsItem in news" type="item-text-wrap"  href="#/tab/news/{{newsItem.id}}">
+          <img ng-src="{{newsItem.imgurl}}">
+          <h2>{{newsItem.title}}</h2>
+          <p>{{newsItem.summary}}</p>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+
+          <ion-option-button class="button-assertive" ng-click="remove(newsItem)">
+            Delete
+          </ion-option-button>
+        </ion-item>
+      </ion-list>
+    </div>
+
+  </ion-content>
+</ion-view>

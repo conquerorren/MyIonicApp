@@ -35,34 +35,35 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     .state('tab', {
     url: '/tab',
     abstract: true,
-        templateUrl: 'templates/tabs/tabs.html'
+        templateUrl: 'templates/tabs/tabs.html',
+        controller: 'TabsCtrl'
       })
 
   // Each tab has its own nav history stack:
-
-    .state('tab.dash', {
-      url: '/dash',
+    .state('tab.homepage', {
+      url: '/homepage',
       views: {
-        'tab-dash': {
-        templateUrl: 'templates/tabs/tab-dash.html',
-        controller: 'DashCtrl'
+        'tab-homepage': {
+        templateUrl: 'templates/tabs/tab-homepage.html',
+        controller: 'HomePageCtrl'
       }
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tab.category', {
+      url: '/category',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tabs/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'tab-category': {
+          templateUrl: 'templates/tabs/tab-category.html',
+          controller: 'CategoryCtrl'
         }
       }
     })
+
     .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+      url: '/category/:chatId',
       views: {
-        'tab-chats': {
+        'tab-category': {
           templateUrl: 'templates/tabs/chat-detail.html',
           controller: 'ChatDetailCtrl'
         }
@@ -87,9 +88,29 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'AccountCtrl'
       }
     }
-  });
+  })
+
+  .state('tab.news-detail', {
+    url: '/news/:newsId',
+    views: {
+      'tab-homepage': {
+        templateUrl: 'templates/tabs/news-detail.html',
+        controller: 'NewsDetailCtrl'
+      }
+    }
+  })
+
+    // .state('coursel-1', {
+    // url: 'tab/category',
+    // views: {
+    //   'coursel-1': {
+    //     templateUrl: 'templates/tabs/tab-category.html',
+    //     controller: 'CategoryCtrl'
+    //   }
+    // }
+  // });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/homepage');
 
 });
